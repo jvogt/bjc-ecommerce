@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Lint') {
             parallel {
-                stage 'Foodcritic' {
+                stage('Foodcritic') {
                     steps {
                         powershell 'foodcritic .'
                     }
                 }
-                stage 'Cookstyle' {
+                stage('Cookstyle') {
                     steps {
                         powershell 'cookstyle'
                     }
