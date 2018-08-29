@@ -1,0 +1,7 @@
+api_protocol = "https"
+enterprise = "automate-demo"
+git_port = "8989"
+organization = "automate"
+pipeline = "master"
+server = "automate.automate-demo.com"
+user = "workstation-1"
