@@ -39,4 +39,4 @@ suites:
     verifier:
       inspec_tests:
         - name: Planet-Express-SSL
-          path: ../../profiles/planetexpress-ssl-3.0.1
+          path: c:/users/chef/profiles/planetexpress-ssl-3.0.1
