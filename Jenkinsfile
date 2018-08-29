@@ -2,17 +2,15 @@ pipeline {
     agent any
     stages {
         stage('Lint') {
-            steps {
-                parallel {
-                    stage 'Foodcritic' {
-                        steps {
-                            powershell 'foodcritic .'
-                        }
+            parallel {
+                stage 'Foodcritic' {
+                    steps {
+                        powershell 'foodcritic .'
                     }
-                    stage 'Cookstyle' {
-                        steps {
-                            powershell 'cookstyle'
-                        }
+                }
+                stage 'Cookstyle' {
+                    steps {
+                        powershell 'cookstyle'
                     }
                 }
             }
