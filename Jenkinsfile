@@ -33,6 +33,7 @@ pipeline {
             }
             steps {
                 powershell 'knife spork promote stage . --remote'
+                powershell 'knife ssh "chef_environment:stage" sudo chef-client'
             }
         }
         stage('Promote to prod')
@@ -41,6 +42,7 @@ pipeline {
             }
             steps {
                 powershell 'knife spork promote production . --remote'
+                powershell 'knife ssh "chef_environment:production" sudo chef-client'
             }
         }
     }
