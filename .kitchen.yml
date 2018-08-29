@@ -16,7 +16,7 @@ driver:
 
 transport:
   username: ubuntu
-  ssh_key: ~/.ssh/id_rsa
+  ssh_key: C:/Users/chef/.ssh/id_rsa
 
 provisioner:
   name: chef_zero
