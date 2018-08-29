@@ -8,6 +8,7 @@ pipeline {
                         steps {
                             powershell 'foodcritic .'
                         }
+                    }
                     stage 'Cookstyle' {
                         steps {
                             powershell 'cookstyle'
