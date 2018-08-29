@@ -48,7 +48,7 @@ pipeline {
         }
     }
     post {
-        failure {
+        always {
             powershell 'kitchen destroy'
         }
   }
