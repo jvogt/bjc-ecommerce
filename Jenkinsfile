@@ -22,7 +22,8 @@ pipeline {
         }
         stage('Deploy to dev') {
             steps {
-                powershell 'knife cookbook upload .'
+                powershell 'berks upload'
+
                 powershell 'knife ssh "chef_environment:development" sudo chef-client'
             }
         }
@@ -32,8 +33,7 @@ pipeline {
                 script {
                     input message: 'Approve deployment to stage?'
                 }
-                powershell 'knife spork promote stage . --remote'
-                powershell 'knife ssh "chef_environment:stage" sudo chef-client'
+                powershell 'knife ssh "chef_environment:staging" sudo chef-client'
             }
         }
         stage('Promote to prod') {
@@ -42,7 +42,6 @@ pipeline {
                 script {
                     input message: 'Approve deployment to prod?'
                 }
-                powershell 'knife spork promote production . --remote'
                 powershell 'knife ssh "chef_environment:production" sudo chef-client'
             }
         }
