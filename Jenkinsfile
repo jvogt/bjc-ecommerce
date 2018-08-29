@@ -5,7 +5,7 @@ pipeline {
             parallel {
                 stage('Foodcritic') {
                     steps {
-                        powershell 'foodcritic .'
+                        sh 'foodcritic . $(for t in `cat .foodcritic`; do echo -t $t; done)'
                     }
                 }
                 stage('Cookstyle') {
