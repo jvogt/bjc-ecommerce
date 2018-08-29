@@ -33,6 +33,7 @@ pipeline {
                 script {
                     input message: 'Approve deployment to stage?'
                 }
+                powershell 'knife spork promote staging bjc-ecommerce'
                 powershell 'knife ssh "chef_environment:staging" sudo chef-client'
             }
         }
@@ -42,6 +43,7 @@ pipeline {
                 script {
                     input message: 'Approve deployment to prod?'
                 }
+                powershell 'knife spork promote staging bjc-ecommerce'
                 powershell 'knife ssh "chef_environment:production" sudo chef-client'
             }
         }
