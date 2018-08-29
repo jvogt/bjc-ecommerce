@@ -27,7 +27,7 @@ pipeline {
                 powershell 'knife ssh "chef_environment:development" sudo chef-client'
             }
         }
-        stage('Promote to stage')
+        stage('Promote to stage') {
             timeout(time:5, unit:'HOURS') {
                 input message: 'Approve deployment to stage?'
             }
@@ -36,7 +36,7 @@ pipeline {
                 powershell 'knife ssh "chef_environment:stage" sudo chef-client'
             }
         }
-        stage('Promote to prod')
+        stage('Promote to prod') {
             timeout(time:5, unit:'HOURS') {
                 input message: 'Approve deployment to prod?'
             }

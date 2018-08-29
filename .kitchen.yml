@@ -21,9 +21,6 @@ transport:
 provisioner:
   name: chef_zero
   client_rb:
-    data_collector.server_url: 'https://automate.automate-demo.com/data-collector/v0/'
-    data_collector.token: '93a49a4f2482c64126f7b6015e6b0f30284287ee4054ff8807fb63d9cbd1c506'
-    data_collector.raise_on_failure: true
     ssl_verify_mode: ':verify_none'
     verify_api_cert: false
 
@@ -42,4 +39,4 @@ suites:
     verifier:
       inspec_tests:
         - name: Planet-Express-SSL
-          url: https://github.com/ChefRycar/planetexpress-ssl/archive/3.0.1.tar.gz
+          path: ../../profiles/planetexpress-ssl-3.0.1
