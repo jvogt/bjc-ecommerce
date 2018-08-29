@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                powershell 'kitchen verify'
+                bat 'kitchen test --destroy always'
             }
         }
         stage('Deploy to dev') {
@@ -47,5 +47,10 @@ pipeline {
             }
         }
     }
+    post {
+        failure {
+            powershell 'kitchen destroy'
+        }
+  }
 }
 
