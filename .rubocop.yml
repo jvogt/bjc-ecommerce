@@ -21,3 +21,6 @@ LeadingCommentSpace:
   Enabled: false
 AsciiComments:
   Enabled: false
+Layout/EndOfLine:
+  Enabled: false
+
